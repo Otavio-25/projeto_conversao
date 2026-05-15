@@ -1,22 +1,23 @@
 //menu com as opcoes de operacao
 
 #include <iostream>
- #include "validacao.hpp" //declaracao das funcoes de validacao de valores em outro arquivo
+ #include "validacao.hpp" 
+ #include "conversor.hpp" //das funcoes de validacao de valores em outro arquivo
 using namespace std;
 
 void menuPrincipal(){
     cout << "===========================" << endl;
-    cout << "   CONVERSOR DE VALORES    " << endl;
+    cout << "   CONVERSOR DE VALORES   " << endl;
     cout << "===========================" << endl;
     cout << "1 - Conversao Simples" << endl;
-    cout << "2 - Conversao com Fracionários" << endl;
+    cout << "2 - Conversao com Fracionarios" << endl;
     cout << "3 - Conversao Passo a Passo" << endl;
     cout << "4 - Modo Batch" << endl;
     cout << "5 - Modo Quiz" << endl;
-    cout << "6 - Calculadora de Máximos" << endl;
+    cout << "6 - Calculadora de Maximos" << endl;
     cout << "0 - Sair do Programa" << endl;
     cout << "===========================" << endl;
-    cout << "Escolha uma opção : ";
+    cout << "Escolha uma opcao : ";
 }
 
 int main(){
@@ -24,6 +25,7 @@ int main(){
     string valorEntrada, resultado; //string para o valor de entrada, pois pode ser um hexadecimal que utiliza letras
 
     do{
+        cout<<endl;
         menuPrincipal();
         cin >> opcao;
 
@@ -37,10 +39,10 @@ int main(){
 
             //funcao para ver se o valor pertence à base
             if(validarEntrada(valorEntrada, baseOrigem)){
-                //resultado = conversorBases(valorEntrada, baseOrigem, baseDestino);
+                resultado = conversorBases(valorEntrada, baseOrigem, baseDestino);
                 cout << "Resultado : " << resultado << endl;
             }else{
-                cout << "Erro! O número digitado não pertende a base" << endl;
+                cout << "Erro! O numero digitado nao pertende a base" << endl;
             }
         }else if(opcao == 2){
 
@@ -55,7 +57,7 @@ int main(){
         }else if(opcao == 0){
             cout << "Programa encerrado, Muito Obrigado !" << endl;
         }else{
-            cout << "Opcao Inválida, digite um valor válido !" << endl;
+            cout << "Opcao Invalida, digite um valor válido !" << endl;
         }
 
 
